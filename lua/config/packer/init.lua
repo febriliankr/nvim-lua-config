@@ -45,7 +45,6 @@ require("packer").startup(function()
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v2.x",
 		requires = "MunifTanjim/nui.nvim",
-		keys = "<leader>e",
 		config = [[require("config.interface.filemanager")()]],
 		after = "nui.nvim",
 	})
@@ -141,43 +140,6 @@ require("packer").startup(function()
 	-- improve syntax hightlight on typescript
 	use("HerringtonDarkholme/yats.vim")
 
-	--
-	-- -- editor
-	-- use({
-	--     "mattn/gist-vim",
-	--     requires = "mattn/webapi-vim",
-	--     setup = [[require("configs.editor.gist")()]],
-	-- })
-
-	-- use({
-	--     "voldikss/vim-translator",
-	--     setup = [[require("configs.editor.translator")()]],
-	--     cmd = "Translate",
-	-- })
-
-	-- use("machakann/vim-sandwich")
-	-- use({ "junegunn/vim-easy-align", cmd = "EasyAlign" })
-
-	-- use({ "ellisonleao/glow.nvim", ft = "markdown" })
-	-- use("nathom/filetype.nvim")
-	-- use("gpanders/nvim-parinfer")
-	-- use({ "elkowar/yuck.vim", ft = "yuck" })
-	--
-	-- -- completion
-	-- use({
-	--     "hrsh7th/nvim-cmp",
-	--     requires = {
-	--         "hrsh7th/cmp-buffer",
-	--         "hrsh7th/cmp-nvim-lsp",
-	--         "hrsh7th/cmp-nvim-lua",
-	--         "hrsh7th/cmp-path",
-	--     },
-	--     config = [[require("configs.completion.cmp")()]],
-	--     after = "nvim-autopairs",
-	-- })
-	--
-
-	--
 	--dependencies
 	use("kyazdani42/nvim-web-devicons")
 	use("nvim-lua/popup.nvim")

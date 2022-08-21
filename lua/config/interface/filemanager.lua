@@ -31,7 +31,11 @@ function M.config()
 			},
 		},
 		window = {
-			position = "left",
+			-- ketika position = current nanti window file managernya full 1 buffer
+			-- ketika position = left, ini nanti ketika eksekusi nvim . 
+			-- neo-tree ga bakalan langsung kebuka
+			-- saranku set position = left biar tampilannya cantik
+			position = "current",
 			width = 40,
 			mappings = {
 				["o"] = "toggle_node",
@@ -49,7 +53,7 @@ function M.config()
 				},
 			},
 			follow_current_file = true,
-			hijack_netrw_behavior = "open_default",
+			hijack_netrw_behavior = "open_current",
 			use_libuv_file_watcher = false,
 		},
 		buffers = {
