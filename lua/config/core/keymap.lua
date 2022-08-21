@@ -12,3 +12,6 @@ keymap.set("n", "<C-Left>", "<CMD>vertical resize +5<CR>")
 keymap.set("n", "<C-Up>", "<CMD>resize -5<CR>")
 keymap.set("n", "<C-Right>", "<CMD>vertical resize -5<CR>")
 keymap.set("n", "<C-Down>", "<CMD>resize +5<CR>")
+
+-- disable the built-in CTRL+o | I'm replacing it with telescope keybindings
+vim.keymap.set("n", "<C-o>", "<Nop>")

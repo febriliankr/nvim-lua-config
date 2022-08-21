@@ -77,11 +77,12 @@ function M.keymap()
 	)
 	keymap.set(
 		"n",
-		"<Leader>b",
+		"<C-o>",
 		require("telescope.builtin").buffers,
 		{ desc = "Telescope: Lists open buffers in current neovim instance" }
 	)
-	keymap.set("n", "<Leader>o", require("telescope.builtin").find_files, { desc = "Telescope: Open files" })
+	keymap.set("n", "<C-f>", require("telescope.builtin").live_grep, { desc = "Telescope: Live grep" })
+	keymap.set("n", "<C-p>", require("telescope.builtin").find_files, { desc = "Telescope: Open files" })
 	keymap.set("n", "<Leader>m", require("telescope.builtin").marks, { desc = "Telescope: Lists vim marks" })
 	keymap.set(
 		"n",
