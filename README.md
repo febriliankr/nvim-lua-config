@@ -1,16 +1,16 @@
-# Instalasi (asumsi menggunakan gnu/linux)
-1. install packer.nvim  
+# Instalasi (MacOS & Linux)
+1. Install packer.nvim  
 `git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
-2. clone repository nvimrc  
+2. Clone repository nvimrc  
 `git clone url-reponya ~/.config/nvim`
-3. buka nvimnya lalu ketik PackSync
-4. ketika ketemu masalah hubungi saya
+3. Run command `:PackerSync`
+4. Ketika ketemu masalah hubungi saya
 
 
-# keybinding
+# Keybindings
 
-## main
+## Main
 `lua/config/core/keymap.lua`
 | Key          | deskripsi                                                |
 | ------------ | -------------------------------------------------------- |
@@ -77,14 +77,15 @@
 | gtj | menambahkan tag json ke struct |
 | gtd | menambahkan tag db ke struct   |
 | gtc | membersihkan tag di struct     |
+| gi  | go to implementation           |
 
 
 ## Telescope
 | Key             | deskripsi                                     |
 | --------------- | --------------------------------------------- |
 | leader + 0      | history file yang pernah dibuka               |
-| leader + b      | daftar buffer                                 |
-| leader + o      | buka file                                     |
+| ctrl + o        | daftar buffer                                 |
+| ctrl + p        | list all file                                 |
 | leader + m      | daftar vim mark                               |
 | leader + leader | membuka builtin functionnya telescope         |
 | leader + k      | menampilkan seluruh keymap yang ada           |

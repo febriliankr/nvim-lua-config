@@ -42,8 +42,8 @@ function M.keymap()
         "gi",
         vim.lsp.buf.implementation,
         { buffer = true, desc = "LSP: Lists all the implementations for the symbol under the cursor in the quickfix window." }
-
     )
+
     keymap.set(
         "n",
         "ga",

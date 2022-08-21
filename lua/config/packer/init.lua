@@ -8,6 +8,18 @@ require("packer").startup(function()
 	-- package manager
 	use("wbthomason/packer.nvim")
 
+    -- Scope NVIM to the opened project
+    use {
+      "ahmedkhalf/project.nvim",
+      config = function()
+        require("project_nvim").setup {
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        }
+      end
+    }
+
 	-- colorscheme
 	use({
 		"folke/tokyonight.nvim",
