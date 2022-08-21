@@ -23,4 +23,5 @@ local function format()
 end
 -- keymap
 vim.keymap.set("n", "<leader>f", format, { desc = "LSP: Formats the current buffer" })
+vim.keymap.set("n", "<leader>f", format, { desc = "LSP: Formats the current buffer" })
 vim.keymap.set("v", "<leader>f", vim.lsp.buf.range_formatting, { desc = "LSP: Formats a given range" })
