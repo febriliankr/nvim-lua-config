@@ -135,7 +135,7 @@ require("packer").startup(function()
 	})
 
 	--  stelve
-	use("leafOfTree/vim-svelte-plugin")
+	-- use("leafOfTree/vim-svelte-plugin")
 
 	-- easymotion (Vim motions on speed!)
 	-- use("easymotion/vim-easymotion")
