@@ -1,1 +1,1 @@
-autocmd BufWritePre *.go lua vim.lsp.buf.format({ async = true })
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')

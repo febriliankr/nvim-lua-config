@@ -19,6 +19,7 @@
 | CTRL + Up    | memperkecil ukuan window buffer ketika berdada di split  |
 | CTRL + Down  | memperbesar ukuan window buffer ketika berdada di split  |
 | space        | map leader                                               |
+| ++           | comment code                                             |
 
 ## Buffer 
 `lua/config/interface/bufferline.lua`

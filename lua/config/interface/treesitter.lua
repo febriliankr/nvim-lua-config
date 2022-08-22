@@ -29,6 +29,9 @@ function M.config()
 		autopairs = {
 			enable = true,
 		},
+		context_commentstring = {
+			enable = true,
+		},
 	}
 end
 

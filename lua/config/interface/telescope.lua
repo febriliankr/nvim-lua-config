@@ -38,9 +38,9 @@ function M.config()
 			},
 			color_devicons = true,
 			use_less = false,
-			-- file_previewer = previewers.vim_buffer_cat.new,
-			-- grep_previewer = previewers.vim_buffer_vimgrep.new,
-			-- qflist_previewer = previewers.vim_buffer_qflist.new,
+			file_previewer = previewers.vim_buffer_cat.new,
+			grep_previewer = previewers.vim_buffer_vimgrep.new,
+			qflist_previewer = previewers.vim_buffer_qflist.new,
 		},
 		pickers = {
 			oldfiles = {

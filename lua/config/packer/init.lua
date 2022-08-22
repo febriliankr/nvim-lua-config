@@ -8,22 +8,22 @@ require("packer").startup(function()
 	-- package manager
 	use("wbthomason/packer.nvim")
 
-    -- Scope NVIM to the opened project
-    use {
-      "ahmedkhalf/project.nvim",
-      config = function()
-        require("project_nvim").setup {
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        }
-      end
-    }
+	-- Scope NVIM to the opened project
+	use({
+		"ahmedkhalf/project.nvim",
+		config = function()
+			require("project_nvim").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
 
 	-- colorscheme
 	use({
 		"folke/tokyonight.nvim",
-		 config = [[require("config.interface.colorscheme")]],
+		config = [[require("config.interface.colorscheme")]],
 	})
 
 	-- statusline
@@ -81,57 +81,60 @@ require("packer").startup(function()
 		config = [[require("config.completion.autopairs")()]],
 	})
 
-	-- commet
-	use({
-		"numToStr/Comment.nvim",
-		keys = { "gc", "gb", "gcc" },
-		config = [[require("Comment").setup()]],
-	})
+	-- comment
+	use({ "preservim/nerdcommenter" })
 
 	-- language server
-	use({
-		"williamboman/mason.nvim",
-		cmd = { "Mason", "MasonInstall", "MasonUninstall" },
-		config = [[require("config.lsp.installer")]],
-	})
-	use({
-		"neovim/nvim-lspconfig",
-		requires = {
-			"jose-elias-alvarez/null-ls.nvim",
-			"hrsh7th/cmp-nvim-lsp",
-		},
-		config = [[require("config.lsp")()]],
-	})
-	use({
-		"folke/trouble.nvim",
-		config = [[require("config.lsp.trouble")]],
-		after = "nvim-lspconfig",
-	})
+	-- use({
+	-- 	"williamboman/mason.nvim",
+	-- 	cmd = { "Mason", "MasonInstall", "MasonUninstall" },
+	-- 	config = [[require("config.lsp.installer")]],
+	-- })
+	-- use({
+	-- 	"neovim/nvim-lspconfig",
+	-- 	requires = {
+	-- 		"jose-elias-alvarez/null-ls.nvim",
+	-- 		"hrsh7th/cmp-nvim-lsp",
+	-- 	},
+	-- 	config = [[require("config.lsp")()]],
+	-- })
+	-- use({
+	-- 	"folke/trouble.nvim",
+	-- 	config = [[require("config.lsp.trouble")]],
+	-- 	after = "nvim-lspconfig",
+	-- })
+
+	-- completion
+	-- use({
+	-- 	"hrsh7th/nvim-cmp",
+	-- 	requires = {
+	-- 		"hrsh7th/cmp-buffer",
+	-- 		"hrsh7th/cmp-nvim-lua",
+	-- 		"hrsh7th/cmp-path",
+	-- 	},
+	-- 	config = [[require("config.completion.cmp")()]],
+	-- 	after = "nvim-autopairs",
+	-- })
+
+	-- snippet
+	-- use({
+	-- 	"saadparwaiz1/cmp_luasnip",
+	-- 	requires = "L3MON4D3/LuaSnip",
+	-- 	config = [[require("config.completion.snippet")()]],
+	-- })
+
+	-- golang
+	-- use({
+	-- 	"ray-x/go.nvim",
+	-- 	ft = "go",
+	-- 	config = [[require("config.languages.go")()]],
+	-- })
 
 	-- completion
 	use({
-		"hrsh7th/nvim-cmp",
-		requires = {
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-nvim-lua",
-			"hrsh7th/cmp-path",
-		},
-		config = [[require("config.completion.cmp")()]],
-		after = "nvim-autopairs",
-	})
-
-	-- snippet
-	use({
-		"saadparwaiz1/cmp_luasnip",
-		requires = "L3MON4D3/LuaSnip",
-		config = [[require("config.completion.snippet")()]],
-	})
-
-	-- golang
-	use({
-		"ray-x/go.nvim",
-		ft = "go",
-		config = [[require("config.languages.go")()]],
+		"neoclide/coc.nvim",
+		branch = "release",
+		config = [[require("config.completion.coc")()]],
 	})
 
 	--  stelve
@@ -144,13 +147,13 @@ require("packer").startup(function()
 	use("skywind3000/asyncrun.vim")
 
 	-- multi cursor
-	use("mg979/vim-visual-multi")
+	-- use("mg979/vim-visual-multi")
 
 	-- fix cursor hold
-	use("antoinemadec/FixCursorHold.nvim")
+	-- use("antoinemadec/FixCursorHold.nvim")
 
 	-- improve syntax hightlight on typescript
-	use("HerringtonDarkholme/yats.vim")
+	-- use("HerringtonDarkholme/yats.vim")
 
 	--dependencies
 	use("kyazdani42/nvim-web-devicons")
