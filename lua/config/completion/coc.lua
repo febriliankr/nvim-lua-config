@@ -1,13 +1,13 @@
 local M = {}
 
-function CheckBackspace()
-	local col = vim.fn.col(".") - 1
-	if col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
-		return true
-	else
-		return false
-	end
-end
+-- function CheckBackspace()
+-- 	local col = vim.fn.col(".") - 1
+-- 	if col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
+-- 		return true
+-- 	else
+-- 		return false
+-- 	end
+-- end
 
 local function ShowDocumentation()
 	if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
@@ -25,7 +25,11 @@ function M.keymap()
 	local keymap = vim.keymap
 
 	vim.cmd([[ 
-		inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(1) :  luaeval(CheckBackspace()) ? "\<Tab>" : coc#refresh()
+        function! CheckBackspace() abort
+          let col = col('.') - 1
+          return !col || getline('.')[col - 1]  =~# '\s'
+        endfunction
+		inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(1) :  CheckBackspace() ? "\<Tab>" : coc#refresh()
 		inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 		inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 	]])
